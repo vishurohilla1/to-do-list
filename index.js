@@ -26,13 +26,18 @@ function addTask() {
 
     doneBtn = document.createElement("button");
     doneBtn.innerText = "✅";
-    doneBtn.addEventListener("click",()=>{
+    doneBtn.addEventListener("click", () => {
         taskDiv.classList.toggle("bg-gray-400");
+        tPara.classList.toggle("line-through");
 
-    })
+    });
 
     let delBtn = document.createElement("button");
     delBtn.innerText = "🗑️";
+    delBtn.addEventListener("click", () => {
+        taskDiv.remove();
+
+    });
 
     taskDiv.appendChild(tPara);
     taskDiv.appendChild(doneBtn);
@@ -40,7 +45,7 @@ function addTask() {
 
     tasksArea.appendChild(taskDiv);
 
-    input.value="";
+    input.value = "";
 
 }
 
